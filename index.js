@@ -5,10 +5,10 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.get("/docker",(req,res)=>{
-    res.status(200).send("endpoint docker rodando bunitão!!")
+    res.status(200).send("Endpoint docker rodando bunitão!!")
 })
 app.get("/",(req,res)=>{
-    res.status(200).send("rodando na maciota!!")
+    res.status(200).send("Rodando na maciota!!")
 })
 app.listen(PORT,()=>{
     console.log("rodando na 3000")
