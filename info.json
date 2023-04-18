@@ -30,6 +30,6 @@
     "errors": [
         "cors must be enable",
         "the server PORT must be 'process.env.PORT' to work properly, not a hard coded number"
-        
-    ]
+    
+    ,"Este vídeo não ensina docker ou node js, apenas da um ponto de partida para quem quer ter uma aplicação rodando de forma remota"]
 }
