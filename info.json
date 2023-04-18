@@ -1,11 +1,16 @@
 {
-    "requirements":[
-        {"docker":"https://docs.docker.com/get-docker/"},
-        {"heroku account":"heroku.com"},
-        {"heroku cli and docs":"https://devcenter.heroku.com/articles/heroku-cli"}
-
+    "requirements": [
+        {
+            "docker": "https://docs.docker.com/get-docker/"
+        },
+        {
+            "heroku account": "heroku.com"
+        },
+        {
+            "heroku cli and docs": "https://devcenter.heroku.com/articles/heroku-cli"
+        }
     ],
-    "walkthrough":[
+    "walkthrough": [
         "create heroku account",
         "install heroku cli",
         "install docker",
@@ -20,11 +25,11 @@
         "run heroku container:push web --app [app name]'",
         "run heroku container:release web --app [app name]'",
         "run 'heroku open --app [app name]'",
-        "and  XABLAU, you have a remote server running"        
+        "and  XABLAU, you have a remote server running"
     ],
-    "errors":[
+    "errors": [
         "cors must be enable",
-    "the server PORT must be 'process.env.PORT' to work properly, not a hard coded number",
-    ""
+        "the server PORT must be 'process.env.PORT' to work properly, not a hard coded number"
+        
     ]
 }
