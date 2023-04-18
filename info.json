@@ -18,7 +18,7 @@
         "create .dockerignore file",
         "create docker-compose.yml file",
         "create Dockerfile",
-        "you application need cors enable",
+        "write code to enable cors or use the cors lib",
         "run 'heroku login'",
         "run 'heroku container:login'",
         "run 'heroku create --app [app name]'",
