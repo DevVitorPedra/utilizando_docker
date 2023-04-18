@@ -1,8 +1,8 @@
 # Dockerizando
 >Um simples passo a passo para utilizar docker em uma aplicação node
-```
-##Requisitos:
->Docker
->Heroku account
->Heroku CLI
-```
+>##Requisitos:
+
+[x] - Docker
+[x] - Heroku account
+[x] - Heroku CLI
+
