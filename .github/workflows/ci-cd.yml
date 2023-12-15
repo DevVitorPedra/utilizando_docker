@@ -8,7 +8,7 @@ name: Execução do CI/CD GCP
 on:
   push:
     branches: 
-     - dev
+     - master
 
 # Variáveis de ambiente para ser utilizado nos fluxos
 env:
