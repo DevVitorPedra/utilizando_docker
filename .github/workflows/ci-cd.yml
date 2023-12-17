@@ -1,10 +1,10 @@
 name: Execução do CI/CD GCP
 
-# This workflow uses actions that are not certified by GitHub.
+# This master uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
-# No 'on' deve ser escolhido gatilho que irá ativar o workflow, no nosso caso é um push pra master
+# No 'on' deve ser escolhido gatilho que irá ativar o master, no nosso caso é um push pra dev
 on:
   push:
     branches: 
@@ -12,8 +12,8 @@ on:
 
 # Variáveis de ambiente para ser utilizado nos fluxos
 env:
-  REGISTRY: sou-junior # repositorio artifact
-  SERVICE: sou-junior # cloud run
+  REGISTRY: tem-vaga-mestre-images # repositorio artifact
+  SERVICE: tem-vaga-mestre-api # cloud run
   REGION: us-central1
 
 # Jobs são os trabalhos que serão executados neste fluxo
@@ -23,7 +23,7 @@ jobs:
 
   # aqui damos o nome ao nosso Job
   create-docker-image-and-send-to-gcp:
-    # verifica se a referencia da Branch é a master
+    # verifica se a referencia da Branch é a dev
     # se estiver fazendo em outra branch deve escrever o nome da branch
     if: github.ref == 'refs/heads/master'
     # Runs on é o OS da VM aqui sera executado em Linux Ubunto
@@ -56,8 +56,8 @@ jobs:
           # run roda comandos de terminal
         run: |
           gcloud auth configure-docker us-central1-docker.pkg.dev
-          docker build -t us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/master:latest .
-          docker push us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/master:latest
+          docker build -t us-central1-docker.pkg.dev/sou-junior-406812/tem-vaga-mestre-images/dev:latest .
+          docker push us-central1-docker.pkg.dev/sou-junior-406812/tem-vaga-mestre-images/dev:latest
       
 
   deploy-to-gcp-cloud-run:
@@ -81,6 +81,7 @@ jobs:
         
         with:
           service: ${{ env.SERVICE }}
-          image: us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/master:latest
+          image: us-central1-docker.pkg.dev/sou-junior-406812/tem-vaga-mestre-images/dev:latest
           region: ${{ env.REGION }}
-          
+
+   
