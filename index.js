@@ -17,7 +17,6 @@ app.post("/login", login);
 app.post("/create", createUser);
 app.get("/user/:id", getUserById);
 app.get("/secret", testingEnvironment);
-console.log(process.env.PORT);
 app.listen(PORT, () => {
   console.log(`Rodando na porta: ${PORT}`);
 });

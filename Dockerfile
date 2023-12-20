@@ -4,11 +4,13 @@ WORKDIR /usr/app
 
 COPY package.json package-lock.json ./
 
+ENV SECRET = ${SECRET}
+
 RUN npm install
 
 COPY . .
 
-EXPOSE ${PORT}
+EXPOSE 3333
 
 
 CMD [ "npm","start" ]
